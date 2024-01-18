@@ -1,0 +1,81 @@
+'use strict';
+
+// -------------------------------------------------------------------------------------------------------
+//  Challenge 01:
+//  Required:
+//
+//  Write a function that takes an array and returns the maximum value in the provided array
+//  without using build-in functions.
+//  
+// Input: [12, 32, 22, 45, 78, 12, 50]
+// Output: 78
+//  
+
+const findMax = (arr)=>{
+    let max = 0;
+    // write your code here
+    for (let i = 0; i<arr.length; i++){
+        if (arr[i] > max){
+            max = arr[i];
+        }      
+    } 
+    return max;
+}
+var maxIndex = findMax([12, 32, 22, 45, 78, 12, 50]);
+console.log(maxIndex);
+// -------------------------------------------------------------------------------------------------------
+
+// -------------------------------------------------------------------------------------------------------
+//  Challenge 02:
+//  Required:
+//
+//  Write a function that takes an arrays and returns the Sum of the numeric values
+//  inside the array (there could be strings inside), without using built-in functions
+//  
+// Input: [20, '234', 'car', 41, 20, 'chair']
+// Output: 81
+//  
+
+const sumNums = (arr)=>{
+    let sum = 0;
+    // write your code here
+    for (let i = 0; i<arr.length; i++){
+        if (typeof arr[i] === "number") {
+            sum = sum + arr[i];
+        }else{
+            continue;
+        }
+    
+    }
+    return sum;
+}
+
+var arr_sum = sumNums ([20, '234', 'car', 41, 20, 'chair']);
+console.log(arr_sum);
+// -------------------------------------------------------------------------------------------------------
+
+// -------------------------------------------------------------------------------------------------------
+//  Challenge 03:
+//  Required:
+//
+//  Write a function that takes an array and returns the array reversed
+//  without using built-in functions
+//  
+// Input: ['C#', 'JS', 'Ruby','Python'] 
+// Output: ['Python','Ruby','JS','C#']
+
+const reverseArray = (arr)=>{
+    // write your code here
+    let arr2 = [];
+    for (let i = 0; i<arr.length; i++){
+        arr2.unshift(arr[i]);
+    }
+    return arr2;
+    
+}
+
+let revArray = reverseArray(['C#', 'JS', 'Ruby','Python'] );
+console.log(revArray);
+// -------------------------------------------------------------------------------------------------------
+
+module.exports = {findMax , sumNums, reverseArray};
