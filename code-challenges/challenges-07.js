@@ -31,8 +31,6 @@ let personInfo = {
     age: 67,
     hobby: 'Gaming and Sleeping'
 }
-let printObj = objLat(personInfo);
-console.log(printObj);
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
@@ -47,32 +45,32 @@ console.log(printObj);
 //  fullName and tech if the applicant has more than one year of Experience
 
 // Input:
-let cvs = [
-    {
-        firstName: "Jason",
-        lastName: "James",
-        yearsOfExperience: 20,
-        tech: "JS"
-    },
-    {
-        firstName: "Shira",
-        lastName: null,
-        yearsOfExperience: 5,
-        tech: ".Net"
-    },
-    {
-        firstName: "Dmitri",
-        lastName: "Akkerman",
-        yearsOfExperience: 1,
-        tech: "Python"
-    },
-    {
-        firstName: "Isabella",
-        lastName: null,
-        yearsOfExperience: 7,
-        tech: "Java"
-    }
-]
+// let cvs = [
+// {
+//         firstName: "Jason",
+//         lastName: "James",
+//         yearsOfExperience: 20,
+//         tech: "JS"
+//     },
+//     {
+//         firstName: "Shira",
+//         lastName: null,
+//         yearsOfExperience: 5,
+//         tech: ".Net"
+//     },
+//     {
+//         firstName: "Dmitri",
+//         lastName: "Akkerman",
+//         yearsOfExperience: 1,
+//         tech: "Python"
+//     },
+//     {
+//         firstName: "Isabella",
+//         lastName: null,
+//         yearsOfExperience: 7,
+//         tech: "Java"
+//     }
+// ]
 //
 // Output:
 // [
@@ -123,8 +121,6 @@ const cvFormatter = (arr) => {
     
     return arrFormatted;
 };
-
-cvFormatter(cvs);
 
 
 // -------------------------------------------------------------------------------------------------------
