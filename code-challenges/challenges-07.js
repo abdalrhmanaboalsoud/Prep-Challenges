@@ -25,12 +25,6 @@ const objLat = (obj) => {
     let info = `my name is ${obj.firstName} ${obj.lastName} I am ${obj.age} YO, and I love ${obj.hobby}.`;
     return info;
 };
-let personInfo = {
-    firstName: 'Ellie',
-    lastName: 'Jon',
-    age: 67,
-    hobby: 'Gaming and Sleeping'
-}
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
@@ -111,14 +105,14 @@ const cvFormatter = (arr) => {
             currentObject.fullName = `${arr[i].firstName} ${arr[i].lastName}`;
         }
         if (arr[i].yearsOfExperience > 1) {
-             currentObject.tech = arr[i].tech;
+            currentObject.tech = arr[i].tech;
         }
-       
+
 
         arrFormatted.push(currentObject);
     }
 
-    
+
     return arrFormatted;
 };
 
@@ -147,7 +141,37 @@ const cvFormatter = (arr) => {
 //  1- rejectedApplicants are applications that has both the names empty or null and whoever have one year or less of Experience
 
 const applicationsStatics = (arr) => {
-    // write your code here
+    let result = {
+        javaScript_devs: 0,
+        dotNet_devs: 0,
+        python_devs: 0,
+        java_devs: 0,
+        totalApplicants: 0,
+        rejectedApplicants: 0
+    };
+
+    // let arrWithResults = cvFormatter(arr);
+
+    for (let i = 0; i < arr.length; i++) {
+        let jober = arr[i];
+        if (jober.tech === "JS") {
+            result.javaScript_devs++;
+            result.totalApplicants++;
+        } else if (jober.tech === ".Net" && jober.yearsOfExperience > 1) {
+            result.dotNet_devs++;
+            result.totalApplicants++;
+        } else if (jober.tech === "Python" && jober.yearsOfExperience > 1) {
+            result.python_devs++;
+            result.totalApplicants++;
+        } else if (jober.tech === "Java" && jober.yearsOfExperience > 1) {
+            result.java_devs++;
+            result.totalApplicants++;
+        } else if (jober.yearsOfExperience <= 1 || jober.firstName !== null && jober.lastName !== null) {
+            result.rejectedApplicants++;
+        }
+    }
+
+    return result;
 };
 // -------------------------------------------------------------------------------------------------------
 
@@ -274,7 +298,14 @@ let data = {
 //  2- You need to round the average to the nearest lower number 
 
 const classesAvg = (data) => {
-    // write your code here
+    data.grades.forEach(function (grade) {
+        grade.classes.forEach(function (classItem) {
+            let totalScore = classItem.classScores.reduce((a, b) => a + b, 0);
+            var averageScore = totalScore / classItem.classScores.length;
+            classItem.avg = averageScore;
+        });
+    });
+    return data;
 };
 // -------------------------------------------------------------------------------------------------------
 
