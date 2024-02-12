@@ -55,13 +55,13 @@ describe("Challenge14-03", () => {
 });
 
 describe("Challenge14-04", () => {
-  test.skip("array_To_String", () => {
+  test("array_To_String", () => {
     let test1 = ["move", "it", "away", "from", "the", "street"];
-    let res1 = "move it away from the, street";
+    let res1 = "move it away from the , street";
 
     let test2 = ["hello", "from", "the", "other", "side"];
-    let res2 = "hello from the other side,";
-
+    let res2 = "hello from the other side ,";
+ 
     expect(arrToStr(test1)).toEqual(res1);
     expect(arrToStr(test2)).toEqual(res2);
   });

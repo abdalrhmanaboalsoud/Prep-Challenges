@@ -94,6 +94,20 @@ const replaceWords = (str) => {
 
 const arrToStr = (arr) => {
     // write your code here
+    let coma = ",";
+    let resultArray = [];
+
+    for (let i = 0; i < arr.length; i++) {
+        resultArray.push(arr[i]);
+        if ((i + 1) % 5 === 0) {
+            // if (resultArray[resultArray.length - 1] === " ") {
+            //     resultArray.pop();
+            // }
+            resultArray.push(coma);
+        }
+    }
+
+    return resultArray.join(" ");
 }
 // -------------------------------------------------------------------------------------------------------
 
@@ -116,7 +130,21 @@ const arrToStr = (arr) => {
 
 const letterCounter = (str) => {
     // write your code here
+    let result = str.split("").reduce((acc, curr) => {
+        if (curr !== " ") { // ignore spaces
+            if (acc[curr]) {
+                acc[curr]++;
+            }else{
+                acc[curr] = 1;
+            }
+        }
+         return acc;
+    },{}) 
+     
+   let finalArr = Object.keys(result).map(key => key + result[key]); 
+   return finalArr.join(' '); 
 }
+
 // -------------------------------------------------------------------------------------------------------
 
 
