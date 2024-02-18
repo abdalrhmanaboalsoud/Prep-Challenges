@@ -53,7 +53,16 @@ const detectFace = (arr) => {
 
 const eveCharacter = (str) => {
     //write your code here ...
+    let evenArray = [];
+    const letters = str.split('').filter(char => char !== ' ');
+    let mappedStr = letters.map((element, index) => {
+        if (index % 2 == 0) {
+            evenArray.push(element);
+        }
+    })
+    return evenArray.join("")
 }
+
 // -------------------------------------------------------------------------------------------------------
 
 
@@ -74,6 +83,16 @@ const eveCharacter = (str) => {
 
 const chickenGradients = (arr) => {
     //write your code here ...
+    let chickenArray = [];
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr[i].length; j++) {
+            if (arr[i][j].includes("chicken")) {
+                chickenArray.push([arr[i][j]]);
+            }
+        }
+
+    }
+    return chickenArray;
 }
 // -------------------------------------------------------------------------------------------------------
 
